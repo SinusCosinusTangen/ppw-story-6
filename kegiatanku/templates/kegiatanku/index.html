@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kegiatanku</title>
+    </head>
+
+    <body>
+        <h1>Responden</h1>
+        <table border="solid">
+            <tr>
+                <th>Responden</th>
+                <th>domisili</th>
+                <th>Kegiatan</th>
+            </tr>
+            {% for i in orang %}
+            <tr>
+                <td>{{i.nama}}</td>
+                <td>{{i.domisili}}</td>
+                <td>
+                {% for j in i.kegiatan.all %}
+                    <p>{{j}}</p>
+                {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{% url 'kegiatanku:tambah' %}">Tambah Peserta</a>
+        <a href="{% url 'kegiatanku:tambahKegiatan' %}">Tambah Kegiatan</a>
+    </body>
+</html>
