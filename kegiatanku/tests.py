@@ -54,6 +54,6 @@ class tambah(TestCase):
         self.assertIn("domisili", html_response)
         self.assertIn("Simpan", html_response)
 
-    def test_simpan_kegiatan(self):
-        Client().post('/tambahKegiatan/', {'nama_kegiatan': 'Belajar', 'deskripsi': 'fun'})
-        self.assertEquals(tags.objects.all().count(), 1)
+    def test_simpan_orang(self):
+        Client().post('/tambah/', {'nama': 'James', 'domisili': 'Hatimu'})
+        self.assertEquals(peserta.objects.all().count(), 1)
