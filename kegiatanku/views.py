@@ -4,7 +4,7 @@ from .models import *
 
 # Create your views here.
 def index(request):
-    orang = peserta.objects.all()
+    orang = tags.objects.all()
     return render(request, 'kegiatanku/index.html', {'orang':orang})
 
 def tambahAstaga(request):
