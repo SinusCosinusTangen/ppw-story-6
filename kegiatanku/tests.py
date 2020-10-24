@@ -24,6 +24,7 @@ class cobaTestCase(TestCase):
         tags.objects.create(nama_kegiatan="smh", deskripsi="sesuatu")
         self.assertEquals(tags.objects.all().count(), 1)
 
+#untuk test penambahan
 class tambah(TestCase):
     def test_eksistensi_url_tambah(self):
         response = Client().get('/tambah/')
